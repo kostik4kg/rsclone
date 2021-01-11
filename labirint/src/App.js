@@ -4,9 +4,10 @@ import './App.css';
 function App() {
   return (
     <div className="App">
-      <canvas id="myCanvas"></canvas>
     </div>
   );
 }
-
+// глобальная переменная апп, контейнер пикси
+console.log(window.app);
+// console.log(document.body)
 export default App;
