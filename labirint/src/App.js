@@ -1,10 +1,10 @@
 import './components/js/canvas'
 import './App.css';
-import './components/css/page.scss';
-import './components/css/menu.scss';
-import './components/css/footer.scss';
-import Menu from './components/js/Menu';
-import Footer from './components/js/Footer';
+import './components/sass/page.scss';
+import './components/sass/menu.scss';
+import './components/sass/footer.scss';
+import Menu from './components/jsx/Menu';
+import Footer from './components/jsx/Footer';
 
 function App() {
   return (
