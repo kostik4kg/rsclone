@@ -23,6 +23,7 @@ app.renderer.view.style.position = "absolute";
 app.renderer.view.style.display = "block";
 app.renderer.autoResize = true;
 app.renderer.backgroundColor = 'e12236';
+// const canvasContainer = document.querySelector('.')
 app.renderer.resize(window.innerWidth, window.innerHeight);
 
 document.body.appendChild(app.view);
@@ -44,15 +45,15 @@ function setup() {
   let b1 = new PIXI.Sprite(resources[bars].texture);
   let b2 = new PIXI.Sprite(resources[bars2].texture);
   // let tileM = new PIXI.Sprite(resources[tileMap].textire);
-// rocket
+  // rocket
   let texture = new PIXI.Texture.from(tileSprite);
   let rectangle = new PIXI.Rectangle(96, 64, 32, 32);
   texture.frame = rectangle;
   let rocket = new PIXI.Sprite(texture);
 
-// tileMap
-  let textureMap = new PIXI.Texture.from(tileMap); 
-  let rectangle2 = new PIXI.Rectangle(0,0,200,200);
+  // tileMap
+  let textureMap = new PIXI.Texture.from(tileMap);
+  let rectangle2 = new PIXI.Rectangle(0, 0, 200, 200);
   textureMap.frame = rectangle2;
   let map = new PIXI.Sprite(textureMap);
 
@@ -61,7 +62,7 @@ function setup() {
   let rectangle3 = new PIXI.Rectangle(0, 224, 32, 32);
   textureMap.frame = rectangle3;
   // let boxObj = new PIXI.Sprite(box);
-  for(let i = 0; i< 2100; i++){
+  for (let i = 0; i < 2100; i++) {
     const boxObj = new PIXI.Sprite(box);
     // boxObj.anchor.set(0.5);
     boxObj.x = Math.floor(i % 100) * 32;

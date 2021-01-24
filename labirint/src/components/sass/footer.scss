@@ -1,16 +1,27 @@
+@mixin flex-center-center {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
 .footer {
-  position: absolute;
+  position: fixed;
   bottom: 0;
   width: 100vw;
+  height: 7vh;
   display: flex;
   justify-content: space-around;
   align-items: center;
-  background-color: black;
+  background-color: grey;
 
   .footer__logo {
+    @include flex-center-center;
+
     img {
-      margin: 10px;
-      height: 60px;
+      // margin: 10px;
+      // height: 60px;
+      padding: 5px;
+      height: 7vh;
     }
 
   }

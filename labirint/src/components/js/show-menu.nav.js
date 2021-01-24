@@ -1,3 +1,3 @@
-export default function showHideMenu() {
+export default function showMenu() {
 
 }
