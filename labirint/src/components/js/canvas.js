@@ -24,7 +24,7 @@ app.renderer.view.style.display = "block";
 app.renderer.autoResize = true;
 app.renderer.backgroundColor = 'e12236';
 // const canvasContainer = document.querySelector('.')
-app.renderer.resize(window.innerWidth, window.innerHeight);
+app.renderer.resize(window.innerWidth, window.innerHeight * 0.86);
 
 
 document.body.appendChild(app.view);
@@ -51,8 +51,8 @@ function setup() {
   cat2 = new PIXI.Sprite(resources[catPng].texture);
 
   for (let q = 0; q < map.length; q++) {
-    for (let w = 0; w < map[q].length; w++){
-      if(map[q][w] === 1){
+    for (let w = 0; w < map[q].length; w++) {
+      if (map[q][w] === 1) {
         let rectangle = new PIXI.Graphics();
         rectangle.beginFill(0xccff99);
         rectangle.drawRect(0, 0, 64, 64);
@@ -71,8 +71,8 @@ function setup() {
   let rectangle3 = new PIXI.Rectangle(0, 224, 32, 32);
 
   box.frame = rectangle3;
-  
-  for(let i = 0; i< 2100; i++){
+
+  for (let i = 0; i < 2100; i++) {
 
     const boxObj = new PIXI.Sprite(box);
     // boxObj.anchor.set(0.5);
@@ -82,9 +82,9 @@ function setup() {
     app.stage.addChild(boxObj);
   }
   let left = keyboard("ArrowLeft"),
-      up = keyboard("ArrowUp"),
-      right = keyboard("ArrowRight"),
-      down = keyboard("ArrowDown");
+    up = keyboard("ArrowUp"),
+    right = keyboard("ArrowRight"),
+    down = keyboard("ArrowDown");
 
   left.press = () => {
     catObject.speedX = -5;
@@ -136,7 +136,7 @@ function setup() {
   rectangleArr.forEach((item) => {
     app.stage.addChild(item);
   })
-  
+
   app.ticker.add(delta => gameLoop(delta));
 
   app.renderer.render(app.stage);
@@ -150,7 +150,7 @@ function gameLoop(delta) {
 function play(delta) {
   cat.x += catObject.speedX;
   cat.y += catObject.speedY;
-  
+
   rectangleArr.forEach((item) => {
     if (hitTestRectangle(cat, item)) {
       item.tint = 0xff3300;
