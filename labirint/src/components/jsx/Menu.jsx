@@ -1,6 +1,7 @@
 import React from 'react';
 import showMenu from '../js/show-menu.nav';
 import showCover from '../js/show-cover.nav';
+import playMouseHover from '../js/play-mouse-hover.sound';
 
 
 function Menu() {
@@ -23,7 +24,7 @@ function Menu() {
   
   function MenuItem({props}) {
     return (
-      <div id={props.id} onClick={props.listener}>
+      <div id={props.id} onClick={props.listener} onMouseOver={playMouseHover}>
         {props.title}
       </div>
     )
