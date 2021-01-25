@@ -95,9 +95,9 @@ function setup() {
   app.renderer.render(app.stage);
 
 }
-function gameLoop(delta) {
-  state(delta);
-}
+// function gameLoop(delta) {
+//   state(delta);
+// }
 function play(delta) {
   cat.x += catObject.vh;
   cat.y += catObject.vw;
