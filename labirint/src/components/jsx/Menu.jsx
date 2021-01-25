@@ -1,14 +1,19 @@
 import React from 'react';
+import showMenu from '../js/show-menu.nav';
+import showCover from '../js/show-cover.nav';
 
 
 function Menu() {
   const menuItems = [
-    {id: 'Start', title: 'Start game', listener: () => { alert(1)}},
+    {id: 'Start', title: 'Start game', listener: () => {
+      showMenu();
+      showCover();
+    }},
     {id: 'Settings', title: 'Settings'},
     {id: 'About', title: 'About'}
   ]
     return (
-      <section className="menu">
+      <section className="menu menu-shown">
           { menuItems.map(item => {
             return <MenuItem props={item} key={item.id}/>
           }) }

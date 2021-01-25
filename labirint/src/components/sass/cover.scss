@@ -1,0 +1,19 @@
+.cover {
+  z-index: 500;
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  opacity: .6;
+  background-color: black;
+  cursor: progress;
+}
+
+.cover-shown {
+  display: block;
+}
+
+.cover-hidden {
+  display: none;
+}

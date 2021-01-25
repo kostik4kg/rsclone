@@ -1,3 +1,5 @@
+@import 'shadow-hover';
+
 .header {
   position: fixed;
   top: 0;
@@ -7,9 +9,13 @@
   justify-content: center;
   align-items: center;
   background-color: grey;
+  transition: all .3s;
 
   .header__menu {
+    transition: all .3s;
+    @include shadow-hover;
     font-size: 5vh;
+    color: white;
     font-weight: bold;
     cursor: pointer;
   }
