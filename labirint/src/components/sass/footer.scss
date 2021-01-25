@@ -1,0 +1,51 @@
+@import 'shadow-hover';
+
+@mixin flex-center-center {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.footer {
+  position: fixed;
+  bottom: 0;
+  width: 100vw;
+  height: 7vh;
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+  background-color: grey;
+  transition: all .3s;
+
+  .footer__logo {
+    @include flex-center-center;
+
+
+    img {
+      transition: all .3s;
+      @include shadow-hover;
+      padding: 5px;
+      height: 6vh;
+    }
+
+  }
+
+  .footer__links {
+    display: flex;
+
+    a {
+      transition: all .3s;
+      @include shadow-hover;
+      margin: 5px;
+      text-decoration: none;
+      color: white;
+    }
+  }
+
+
+  .footer__year {
+    margin: 10px;
+    color: white;
+  }
+
+}

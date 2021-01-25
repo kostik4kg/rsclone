@@ -6,6 +6,7 @@
     "@testing-library/jest-dom": "^5.11.8",
     "@testing-library/react": "^11.2.2",
     "@testing-library/user-event": "^12.6.0",
+    "node-sass": "^4.14.1",
     "pixi.js": "^5.3.7",
     "pixi.js-legacy": "^5.3.7",
     "react": "^17.0.1",

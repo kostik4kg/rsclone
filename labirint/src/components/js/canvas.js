@@ -23,8 +23,8 @@ let resources = loader.resources;
 app.renderer.view.style.display = "block";
 app.renderer.autoResize = true;
 app.renderer.backgroundColor = 'e12236';
-app.renderer.resize(1000 , 1000);
-
+// const canvasContainer = document.querySelector('.')
+app.renderer.resize(window.innerWidth, window.innerHeight);
 
 
 document.body.appendChild(app.view);
@@ -65,12 +65,15 @@ function setup() {
     }
   }
 
+
   // произвольный обьект из мап
   let box = new PIXI.Texture.from(tileMap);
   let rectangle3 = new PIXI.Rectangle(0, 224, 32, 32);
+
   box.frame = rectangle3;
   
   for(let i = 0; i< 2100; i++){
+
     const boxObj = new PIXI.Sprite(box);
     // boxObj.anchor.set(0.5);
     boxObj.x = Math.floor(i % 100) * 32;
@@ -139,6 +142,7 @@ function setup() {
   app.renderer.render(app.stage);
 
 }
+
 function gameLoop(delta) {
   state(delta);
 }
