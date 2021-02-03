@@ -1,9 +1,7 @@
 import './components/js/canvas'
 import './App.css';
 import './components/sass/page.scss';
-
 import Game from './components/_Game/Game'
-
 import Header from './components/_Header/Header';
 import Menu from './components/_Menu/Menu';
 import Footer from './components/_Footer/Footer';
@@ -13,10 +11,11 @@ import {
   BrowserRouter as Router,
   Switch,
   Route,
-  Link
 } from "react-router-dom";
+import go from './components/js/go';
 
 function App() {
+  window.addEventListener('load', go);
   return (
     <Router>
       <div className="wrapper">
@@ -38,14 +37,6 @@ function App() {
             <Menu />
           </Route>
 
-          {/* <Route path='/' component={Cover} />
-          <Route path='/' component={Menu} />
-
-          <Route path='/Start' component={Game} />
-
-          <Route path='/Menu' component={Cover} />
-          <Route path='/Menu' component={Menu} /> */}
-
         </Switch>
 
         <Footer />
@@ -55,7 +46,5 @@ function App() {
     </Router>
   );
 }
-// глобальная переменная апп, контейнер пикси
-console.log(window.app);
-// console.log(document.body)
+
 export default App;
