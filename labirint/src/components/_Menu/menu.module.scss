@@ -1,4 +1,4 @@
-@import 'shadow-hover';
+@import '../sass/shadow-hover.scss';
 
 .menu-hidden {
   transition: all .6s;
@@ -7,7 +7,7 @@
   left: 25vw;
 }
 
-.menu-shown {
+.menu_shown {
   transition: all .6s;
   position: fixed;
   top: 29vh;
