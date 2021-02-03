@@ -1,4 +1,4 @@
-@import 'shadow-hover';
+@import '../sass/shadow-hover.scss';
 
 @mixin flex-center-center {
   display: flex;
@@ -7,8 +7,9 @@
 }
 
 .footer {
+  z-index: 2000;
   position: fixed;
-  bottom: 0;
+  top: 93vh;
   width: 100vw;
   height: 7vh;
   display: flex;
