@@ -1,0 +1,9 @@
+canvas{
+  background-color: rgb(238, 123, 123);
+  display: block;
+  position: fixed;
+  left: 0;
+  top: 0;
+  z-index: -1000;
+  margin-top: 7vh;
+}
