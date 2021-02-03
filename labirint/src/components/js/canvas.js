@@ -5,7 +5,7 @@ import { keyboard } from './keypressFn';
 import { hitTestRectangle } from './keypressFn';
 import { gameMap } from './gameMap';
 
-import showMenu from './show-menu.nav';
+// import showMenu from './go';
 import showCover from './show-cover.nav';
 
 let ctx = null;
@@ -147,7 +147,7 @@ function Character() {
   // this.sprites[directions.idle] = [{ x: 0, y: 120, w: 30, h: 30, d: 200 }, { x: 0, y: 120, w: 30, h: 30, d: 200 }];
   this.sprites[directions.up] = [{ x: 10, y: 10, w: 40, h: 47, d: 120 }, { x: 74, y: 10, w: 40, h: 47, d: 120 }, { x: 138, y: 10, w: 40, h: 47, d: 120 }, { x: 202, y: 10, w: 40, h: 47, d: 120 }, { x: 266, y: 10, w: 40, h: 47, d: 120 }, { x: 332, y: 10, w: 40, h: 47, d: 120 }, { x: 396, y: 10, w: 40, h: 47, d: 120 }, { x: 460, y: 10, w: 40, h: 47, d: 120 }, { x: 524, y: 10, w: 40, h: 47, d: 120 }];
   this.sprites[directions.right] = [{ x: 10, y: 205, w: 40, h: 47, d: 120 }, { x: 74, y: 205, w: 40, h: 47, d: 120 }, { x: 138, y: 205, w: 40, h: 47, d: 120 }, { x: 202, y: 205, w: 40, h: 47, d: 120 }, { x: 266, y: 205, w: 40, h: 47, d: 120 }, { x: 332, y: 205, w: 40, h: 47, d: 120 }, { x: 396, y: 205, w: 40, h: 47, d: 120 }, { x: 460, y: 205, w: 40, h: 47, d: 120 }, { x: 524, y: 205, w: 40, h: 47, d: 120 }];
-  this.sprites[directions.down] = [{ x: 10, y: 142, w: 40, h: 47, d: 120 }, { x: 74, y: 142, w: 40, h: 47, d: 120 }, { x: 138, y: 142, w: 40, h: 47, d: 120 }, { x: 202, y: 142, w: 40, h: 47, d:120 }, { x: 266, y: 142, w: 40, h: 47, d: 120 }, { x: 332, y: 142, w: 40, h: 47, d: 120 }, { x: 396, y: 142, w: 40, h: 47, d: 120 }, { x: 460, y: 142, w: 40, h: 47, d: 120 }, { x: 524, y: 142, w: 40, h: 47, d: 120 }];
+  this.sprites[directions.down] = [{ x: 10, y: 142, w: 40, h: 47, d: 120 }, { x: 74, y: 142, w: 40, h: 47, d: 120 }, { x: 138, y: 142, w: 40, h: 47, d: 120 }, { x: 202, y: 142, w: 40, h: 47, d: 120 }, { x: 266, y: 142, w: 40, h: 47, d: 120 }, { x: 332, y: 142, w: 40, h: 47, d: 120 }, { x: 396, y: 142, w: 40, h: 47, d: 120 }, { x: 460, y: 142, w: 40, h: 47, d: 120 }, { x: 524, y: 142, w: 40, h: 47, d: 120 }];
   this.sprites[directions.left] = [{ x: 10, y: 78, w: 40, h: 47, d: 120 }, { x: 74, y: 78, w: 40, h: 47, d: 120 }, { x: 138, y: 78, w: 40, h: 47, d: 120 }, { x: 202, y: 78, w: 40, h: 47, d: 120 }, { x: 266, y: 78, w: 40, h: 47, d: 120 }, { x: 332, y: 78, w: 40, h: 47, d: 120 }, { x: 396, y: 78, w: 40, h: 47, d: 120 }, { x: 460, y: 78, w: 40, h: 47, d: 120 }, { x: 524, y: 78, w: 40, h: 47, d: 120 }];
 
 }
@@ -300,18 +300,18 @@ window.onload = function () {
       tileTypes[x]['spriteDuration'] = t;
     }
   }
-  for(let g in player.sprites) {
-    if (player.sprites[g].length > 1){
+  for (let g in player.sprites) {
+    if (player.sprites[g].length > 1) {
       let t = 0;
-      for (let f in player.sprites[g]){
+      for (let f in player.sprites[g]) {
         player.sprites[g][f]['start'] = t;
         t += player.sprites[g][f].d;
         player.sprites[g][f]['end'] = t;
       }
       player['spriteDuration'] = t;
-      
+
     }
-  
+
   }
 }
 function getFrame(sprite, duration, time, animated) {
@@ -374,15 +374,15 @@ function drawGame() {
       let tile = tileTypes[gameMap[toIndex(x, y)]];
       let sprite = getFrame(tile.sprite, tile.spriteDuration,
         gameTime, tile.animated);
-      
+
       ctx.drawImage(tileset,
         sprite.x, sprite.y, sprite.w, sprite.h,
         viewport.offset[0] + (x * titleW), viewport.offset[1] + (y * titleH),
         titleW, titleH);
     }
   }
-  
-  let sprite = getFramePlayer(player.sprites[player.direction], player.spriteDuration, 
+
+  let sprite = getFramePlayer(player.sprites[player.direction], player.spriteDuration,
     gameTime, player.animated);
 
   ctx.drawImage(tileset2,
@@ -395,19 +395,19 @@ function drawGame() {
   ctx.fillText('FPS ' + frameLasrSecond, 10, 20);
   ctx.fillText('Game speed ' + gameSpeed[currentSpeed].name, 10, 40);
 
-  
+
   lastFrameTime = currentFrameTime;
   requestAnimationFrame(drawGame);
 }
-function startGame(){
+function startGame() {
   player.tileFrom = [1, 1];
   player.tileTo = [15, 15];
 }
 
-function finish(){
-  showMenu();
+function finish() {
+  // showMenu();
   showCover();
 }
 
-export { drawGame, startGame} ;
+export { drawGame, startGame };
 

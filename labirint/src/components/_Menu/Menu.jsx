@@ -1,16 +1,18 @@
 import React from 'react';
-import showMenu from '../js/show-menu.nav';
+import go from '../js/go';
 // import showCover from '../js/show-cover.nav';
 import playMouseHover from '../js/play-mouse-hover.sound';
 import styleObj from './menu.module.scss'
+import { Link, BrowserRouter as Router  } from 'react-router-dom';
 
 
 function Menu() {
   const menuItems = [
     {id: 'Start', title: 'Start game', listener: () => {
-      showMenu();
+      go();
       // showCover();
-    }},
+       }
+    },
     {id: 'Settings', title: 'Settings'},
     {id: 'About', title: 'About'}
   ]
@@ -25,11 +27,11 @@ function Menu() {
   
   function MenuItem({props}) {
     return (
-      //<a href={props.id}>
+      <Link to={props.id}>
         <div id={props.id} onClick={props.listener} onMouseOver={playMouseHover}>
         {props.title}
          </div>
-      //</a>
+      </Link>
       
     )
   }

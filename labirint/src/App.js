@@ -1,14 +1,9 @@
 import './components/js/canvas'
 import './App.css';
 import './components/sass/page.scss';
-// import './components/sass/menu.scss';
-// import './components/sass/footer.scss';
-// import './components/sass/header.scss';
 
 import Game from './components/_Game/Game'
 
-
-// import './components/sass/cover.scss';
 import Header from './components/_Header/Header';
 import Menu from './components/_Menu/Menu';
 import Footer from './components/_Footer/Footer';
@@ -23,18 +18,41 @@ import {
 
 function App() {
   return (
-    // <Router>
-    <div className="wrapper">
-      <Header />
-      <Menu />
-      {/* <Route path='/' component={Cover} /> */}
-      <Footer />
-      {/* <Cover /> */}
+    <Router>
+      <div className="wrapper">
 
-      <Game />
-    </div>
+        <Header />
 
-    // {/* </Router> */}
+        <Switch>
+          <Route exact path='/'>
+            <Cover />
+            <Menu />
+          </Route>
+
+          <Route path='/Start'>
+            <Game />
+          </Route>
+
+          <Route path='/Menu'>
+            <Cover />
+            <Menu />
+          </Route>
+
+          {/* <Route path='/' component={Cover} />
+          <Route path='/' component={Menu} />
+
+          <Route path='/Start' component={Game} />
+
+          <Route path='/Menu' component={Cover} />
+          <Route path='/Menu' component={Menu} /> */}
+
+        </Switch>
+
+        <Footer />
+
+      </div>
+
+    </Router>
   );
 }
 // глобальная переменная апп, контейнер пикси
