@@ -1,11 +1,12 @@
 import React from 'react';
 import playMouseHover from '../../js/play-mouse-hover.sound';
 import { Link } from 'react-router-dom';
+import toggleSound from '../../js/toggleSound';
 
 function SoundOff() {
   return (
 
-    <div className='material-icons' onClick={() => { console.log('of') }} onMouseOver={playMouseHover}>
+    <div id='soundOffBtn' className={`material-icons disabledElement`} onClick={() => { toggleSound() }} onMouseOver={playMouseHover}>
       volume_up
     </div>
 

@@ -38,3 +38,11 @@
     transform: rotate(360deg);
   }
 }
+
+.disabledElement {
+  display: none;
+}
+
+.enabledElement {
+  display: block;
+}
