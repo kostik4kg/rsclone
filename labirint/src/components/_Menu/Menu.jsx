@@ -5,7 +5,7 @@ import styleObj from './menu.module.scss'
 import { Link } from 'react-router-dom';
 
 
-function BtnMenu() {
+function Menu() {
   const menuItems = [
     {
       id: 'Start', title: 'Start game', listener: () => {
@@ -36,4 +36,4 @@ function MenuItem({ props }) {
   )
 }
 
-export default BtnMenu;
+export default Menu;

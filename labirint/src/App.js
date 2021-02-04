@@ -7,6 +7,7 @@ import Menu from './components/_Menu/Menu';
 import Footer from './components/_Footer/Footer';
 import Cover from './components/_Cover/Cover';
 
+
 import {
   BrowserRouter as Router,
   Switch,

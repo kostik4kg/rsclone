@@ -1,34 +1,23 @@
 import React from 'react';
-import go from '../js/go';
-import playMouseHover from '../js/play-mouse-hover.sound';
+import arrowsImg from './arrows.png';
 import styleObj from './about.module.scss'
-import { Link } from 'react-router-dom';
-
+import BtnStart from '../_BtnStart/BtnStart';
+import BtnMenu from '../_BtnMenu/BtnMenu';
 
 function About() {
-  const menuItems =
-    [
-      { id: 'Start', title: 'Start game', listener: () => { go(); } },
-      { id: 'Menu', title: 'Menu' }
-    ]
-
   return (
-    <section className={`${styleObj.menu} ${styleObj.menu_shown}`}>
-      { menuItems.map(item => {
-        return <MenuItem props={item} key={item.id} />
-      })}
-    </section>
-  )
-}
-
-function MenuItem({ props }) {
-  return (
-    <Link to={props.id}>
-      <div id={props.id} onClick={props.listener} onMouseOver={playMouseHover}>
-        {props.title}
+    <div className={styleObj.about}>
+      <div className={styleObj.arrows}>
+        <img className={styleObj.arrows} src={arrowsImg} alt="use keyboard arrows" />
       </div>
-    </Link>
-
+      <div className={styleObj.text}>
+        <p>Use keyboard arrows to move the pathfinder.</p>
+        <p>Use keyboard button "S" to set speed of the hero.</p>
+        <p>Your goal is to find exit from the maze.</p>
+      </div>
+      <BtnStart />
+      <BtnMenu />
+    </div>
   )
 }
 

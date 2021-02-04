@@ -3,12 +3,12 @@
 .about {
   transition: all .6s;
   position: fixed;
-  top: 29vh;
+  top: 22vh;
   left: 35vw;
   z-index: 1000;
   background-color: rgba(239, 241, 234, 0.925);
   width: 50vw;
-  height: 30vh;
+  height: 40vh;
   display: flex;
   justify-content: space-around;
   font-size: 2rem;
@@ -22,4 +22,24 @@
     cursor: pointer;
     @include shadow-hover;
   }
+}
+
+.arrows {
+  transform: none !important;
+  cursor: auto;
+}
+
+.arrows:hover {
+  transform: none;
+  cursor: auto;
+}
+
+.text,
+.text:hover {
+  transform: none !important;
+  text-shadow: none !important;
+  cursor: auto;
+  font-size: 1.2rem;
+  padding: 1rem;
+
 }
