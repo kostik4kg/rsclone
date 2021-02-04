@@ -3,31 +3,20 @@ import go from '../js/go';
 import playMouseHover from '../js/play-mouse-hover.sound';
 import styleObj from './settings.module.scss'
 import { Link } from 'react-router-dom';
+import SoundOn from '../_ToggleSound/SoundOffOnn/SoundOn';
+import SoundOff from '../_ToggleSound/SoundOffOnn/SoundOff';
+import BtnStart from '../_BtnStart/BtnStart';
+import BtnMenu from '../_BtnMenu/BtnMenu';
 
 
 function Settings() {
 
   return (
     <div className={styleObj.settings}>
-
-      <Link to={'/Start'}>
-        <div onMouseOver={playMouseHover}>
-          Start
-        </div>
-      </Link>
-
-      <Link to={'/Start'}>
-        <div onMouseOver={playMouseHover}>
-          Start
-        </div>
-      </Link>
-
-      <Link to={'/Start'}>
-        <div onMouseOver={playMouseHover}>
-          Start
-        </div>
-      </Link>
-
+      <SoundOn />
+      <SoundOff />
+      <BtnStart />
+      <BtnMenu />
     </div>
 
   )

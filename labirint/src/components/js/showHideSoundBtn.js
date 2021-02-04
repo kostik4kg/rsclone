@@ -1,10 +1,13 @@
 export default function showHideSoundBtn() {
-  const btnOn = document.getElementById('soundOnBtn');
-  const btnOff = document.getElementById('soundOffBtn');
+  const btnOn = document.querySelectorAll('.soundOnBtn');
+  const btnOff = document.querySelectorAll('.soundOffBtn');
 
-  btnOff.classList.toggle('disabledElement');
-  btnOn.classList.toggle('disabledElement');
+  const switcher = (btn) => {
+    btn.classList.toggle('disabledElement');
+    btn.classList.toggle('enabledElement');
+  }
 
-  btnOff.classList.toggle('enabledElement');
-  btnOn.classList.toggle('enabledElement');
+  btnOff.forEach(x => switcher(x));
+  btnOn.forEach(x => switcher(x));
+
 }

@@ -17,9 +17,13 @@ import go from './components/js/go';
 import Settings from './components/_Settings/Settings';
 import About from './components/_About/About';
 import ToggleSound from './components/_ToggleSound/ToggleSound';
+import playMusic from './components/js/musicObj';
 
 function App() {
-  window.addEventListener('load', go);
+  window.addEventListener('load', () => {
+    go();
+    playMusic();
+  });
   return (
     <Router>
       <div className="wrapper">

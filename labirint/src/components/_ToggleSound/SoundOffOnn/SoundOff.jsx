@@ -6,7 +6,7 @@ import toggleSound from '../../js/toggleSound';
 function SoundOff() {
   return (
 
-    <div id='soundOffBtn' className={`material-icons disabledElement`} onClick={() => { toggleSound() }} onMouseOver={playMouseHover}>
+    <div className={`material-icons disabledElement soundOffBtn`} onClick={() => { toggleSound() }} onMouseOver={playMouseHover}>
       volume_up
     </div>
 
