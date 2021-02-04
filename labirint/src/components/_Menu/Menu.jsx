@@ -5,35 +5,35 @@ import styleObj from './menu.module.scss'
 import { Link } from 'react-router-dom';
 
 
-function Menu() {
+function BtnMenu() {
   const menuItems = [
-    {id: 'Start', title: 'Start game', listener: () => {
-      go();
-      // showCover();
-       }
+    {
+      id: 'Start', title: 'Start game', listener: () => {
+        go();
+        // showCover();
+      }
     },
-    {id: 'Settings', title: 'Settings'},
-    {id: 'About', title: 'About'}
+    { id: 'Settings', title: 'Settings' },
+    { id: 'About', title: 'About' }
   ]
-    return (
-      <section className={`${styleObj.menu} ${styleObj.menu_shown}`}>
-          { menuItems.map(item => {
-            return <MenuItem props={item} key={item.id}/>
-          }) }
-      </section>
-    )
-  }
-  
-  function MenuItem({props}) {
-    return (
-      <Link to={props.id}>
-        <div id={props.id} onClick={props.listener} onMouseOver={playMouseHover}>
-        {props.title}
-         </div>
-      </Link>
-      
-    )
-  }
+  return (
+    <section className={`${styleObj.menu} ${styleObj.menu_shown}`}>
+      { menuItems.map(item => {
+        return <MenuItem props={item} key={item.id} />
+      })}
+    </section>
+  )
+}
 
-  export default Menu;
-  
+function MenuItem({ props }) {
+  return (
+    <Link to={props.id}>
+      <div id={props.id} onClick={props.listener} onMouseOver={playMouseHover}>
+        {props.title}
+      </div>
+    </Link>
+
+  )
+}
+
+export default BtnMenu;

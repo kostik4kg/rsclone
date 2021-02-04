@@ -1,10 +1,20 @@
 @import '../sass/shadow-hover.scss';
 
-.settings {
+.menu-hidden {
+  transition: all .6s;
+  position: fixed;
+  top: -66vh;
+  left: 25vw;
+}
+
+.menu_shown {
   transition: all .6s;
   position: fixed;
   top: 29vh;
   left: 35vw;
+}
+
+.menu {
   z-index: 1000;
   background-color: rgba(239, 241, 234, 0.925);
   width: 50vw;

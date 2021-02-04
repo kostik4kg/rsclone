@@ -13,6 +13,8 @@ import {
   Route,
 } from "react-router-dom";
 import go from './components/js/go';
+import Settings from './components/_Settings/Settings';
+import About from './components/_About/About';
 
 function App() {
   window.addEventListener('load', go);
@@ -35,6 +37,16 @@ function App() {
           <Route path='/Menu'>
             <Cover />
             <Menu />
+          </Route>
+
+          <Route path='/About'>
+            <About />
+            <Cover />
+          </Route>
+
+          <Route path='/Settings'>
+            <Settings />
+            <Cover />
           </Route>
 
         </Switch>
