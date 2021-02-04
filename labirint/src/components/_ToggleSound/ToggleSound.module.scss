@@ -1,0 +1,25 @@
+@import '../sass/shadow-hover.scss';
+
+.sound {
+  transition: all .6s;
+  position: fixed;
+  top: 1vh;
+  left: 1vw;
+  z-index: 2000;
+  background-color: rgba(239, 241, 234, 0.925);
+  width: 5vw;
+  height: 5vh;
+  display: flex;
+  justify-content: space-around;
+  font-size: 2rem;
+  align-items: center;
+  flex-direction: column;
+  border: 1px solid black;
+  transition: all .3s;
+
+  div {
+    transition: all .3s;
+    cursor: pointer;
+    @include shadow-hover;
+  }
+}
